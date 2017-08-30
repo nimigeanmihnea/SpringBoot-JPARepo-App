@@ -1,6 +1,7 @@
 package application.repository;
 
 import application.entity.Bill;
+import application.entity.OnlineOrder;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -10,4 +11,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface BillRepository extends JpaRepository<Bill,Long>{
+
+    Bill findByOrder(OnlineOrder order);
 }

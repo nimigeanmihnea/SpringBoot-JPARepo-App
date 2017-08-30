@@ -14,6 +14,9 @@ public class OnlineOrder {
     @GeneratedValue
     private long id;
 
+    @OneToOne
+    private ShoppingCart order;
+
     public OnlineOrder(){}
 
     public long getId() {
@@ -22,5 +25,13 @@ public class OnlineOrder {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public ShoppingCart getOrder() {
+        return order;
+    }
+
+    public void setOrder(ShoppingCart order) {
+        this.order = order;
     }
 }

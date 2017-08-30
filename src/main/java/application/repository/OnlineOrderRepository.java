@@ -1,6 +1,7 @@
 package application.repository;
 
 import application.entity.OnlineOrder;
+import application.entity.ShoppingCart;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Repository;
  */
 
 @Repository
-public interface OnlineOrderRepository extends JpaRepository<OnlineOrder, Long>
-{
+public interface OnlineOrderRepository extends JpaRepository<OnlineOrder, Long> {
+
+    OnlineOrder findByOrder(ShoppingCart order);
 }

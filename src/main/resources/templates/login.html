@@ -10,10 +10,14 @@
 	<div class="container">
 		<h1>Welcome</h1>
 		
-		<form class="form">
+		<form class="form" th:action="@{/login}">
 			<input type="text" placeholder="Username"/>
 			<input type="password" placeholder="Password"/>
 			<button type="submit" id="login-button">Login</button>
+		</form>
+
+		<form class="form" th:action="@{/register}">
+			<button type="submit" id="register">Register</button>
 		</form>
 	</div>
 	

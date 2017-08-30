@@ -31,6 +31,9 @@ public class Login extends WebSecurityConfigurerAdapter {
         httpSecurity.authorizeRequests().antMatchers("/", "/resources/**", "/templates/**", "/static/**",
                 "/css/**", "/js/**").permitAll()
                 .antMatchers("/login").permitAll()
+                .antMatchers("/register").permitAll()
+                .antMatchers("/info").permitAll()
+                .antMatchers("/step2").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().defaultSuccessUrl("/home")

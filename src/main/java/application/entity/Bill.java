@@ -1,9 +1,6 @@
 package application.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by NMI4CLJ on 26.07.2017.
@@ -17,6 +14,9 @@ public class Bill {
     @GeneratedValue
     private long id;
 
+    @OneToOne
+    private OnlineOrder order;
+
     public Bill(){}
 
     public long getId() {
@@ -25,5 +25,13 @@ public class Bill {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public OnlineOrder getOrder() {
+        return order;
+    }
+
+    public void setOrder(OnlineOrder order) {
+        this.order = order;
     }
 }
